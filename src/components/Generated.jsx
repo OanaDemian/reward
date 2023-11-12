@@ -2,6 +2,7 @@ import { useState } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Button from '@mui/material/Button';
 import { Box } from '@mui/system';
+import { Translate } from '@mui/icons-material';
 
 export const Generated = ({ val, onComplete}) => {
   const [progress, setProgress] = useState(0);
@@ -12,9 +13,9 @@ export const Generated = ({ val, onComplete}) => {
   }
   return (
     <>
-      <Box sx={{ position: 'relative' }}>
-        <Box sx={{ alignSelf: 'center', position: 'absolute'}}><p>{val}</p></Box> 
-        <CircularProgress variant="determinate" value={(100 / val) * progress} />
+      <Box sx={{ position: 'relative', height: '80vw', width:'80vw', maxHeight:'60vh', maxWidth:'60vh'}}>
+        <Box sx={{ position: 'absolute', textAlign: 'center', width:'100%', fontSize:'15vh', maxFontSize: '30vh', top:'50%', right:'50%', transform: "translate(50%, -50%)"}}>{val}</Box> 
+        <CircularProgress variant="determinate"  thickness="5" size="100%" max-size value={(100 / val) * progress} />
       </Box>
       {(progress < val) ?
         <>
@@ -22,7 +23,6 @@ export const Generated = ({ val, onComplete}) => {
         </>
         :
         <>
-          <p>Reward!</p>
           <Button variant="contained" onClick={() => nextSetClicked()}>Next Set</Button>
         </>
       }
