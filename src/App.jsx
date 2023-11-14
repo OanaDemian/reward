@@ -1,6 +1,6 @@
 import { useContext, createContext, useState, useMemo } from 'react'; 
-import { Stack } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline'
@@ -18,9 +18,9 @@ function MyApp() {
     <>
       <div>
           <div style={{width:'100%', position:'relative'}}>
-            <IconButton sx={{ ml: 1, position:'absolute', right:'100%', transform:'translate(100vw, 0)' }} onClick={colorMode.toggleColorMode} color="inherit">
-                {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
+          <Button variant="outlined" aria-label={theme.palette.mode} sx={{ mr: 1, mt:1, position:'absolute', right:'100%', transform:'translate(100vw, 0)', padding:'5px', minWidth:'0' }} onClick={colorMode.toggleColorMode} color="inherit">
+                {theme.palette.mode === 'dark' ? <Brightness4Icon/> : <Brightness7Icon/>}
+            </Button>
           </div>
           <Box
             sx={{
@@ -39,7 +39,7 @@ function MyApp() {
               </Stack>
               <RewardGiver />
             </Stack>
-            </Box>
+          </Box>
         </div>
       </>
   );
