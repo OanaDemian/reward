@@ -6,7 +6,8 @@ export const RewardGiver = () => {
   const [average, setAverage] = useState(undefined);
   return (
     <>
-      {(typeof average === "undefined") ? <AverageSelection setAverage={setAverage} /> : <Reward average={average} />}
+      {(typeof average === "undefined") ? <AverageSelection setAverage={setAverage} />
+        : <Reward  average={average} setAverage={setAverage} />}
     </>
   )
 }

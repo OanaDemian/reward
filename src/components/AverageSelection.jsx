@@ -10,9 +10,11 @@ export const AverageSelection = ({setAverage}) => {
   const [selectedAverage, setSelectedAverage] = useState(1);
   const handleChange = (event) => {
     const average = event.target.value;
+    //key value of new average to data store
     setSelectedAverage(average);
   };
-
+  //useeffect
+  //add default selection
   return (
     <>
       <Stack spacing={2}
@@ -23,16 +25,14 @@ export const AverageSelection = ({setAverage}) => {
         <FormControl sx={{
           m: 10, minWidth: 160
         }}>
-            {/* <FormControl sx={{}}> */}
-        <InputLabel id="demo-simple-select-autowidth-label">Average</InputLabel>
+          <InputLabel id="demo-simple-select-autowidth-label">Average</InputLabel>
         <Select
           labelId="demo-simple-select-autowidth-label"
           id="demo-simple-select-autowidth"
           value={selectedAverage}
           onChange={handleChange}
-          // autoWidth
           label="Average"
-        >
+          >
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
           <MenuItem value={3}>3</MenuItem>
