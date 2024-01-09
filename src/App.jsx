@@ -12,12 +12,6 @@ const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 function MyApp() {
   const theme = useTheme();
-  // theme.palette.ring = {
-  //   main: '#E3D026',
-  //   light: '#E9DB5D',
-  //   dark: '#fafafa',
-  //   contrastText: '#242105',
-  // }
   const colorMode = useContext(ColorModeContext);
 
   return (
