@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import { Box } from '@mui/system';
 import { useTheme } from '@mui/material/styles';
 import { blue } from '@mui/material/colors';
+import { useMediaQuery } from '@mui/material';
 
 export const Generated = ({ val, onComplete }) => {
   const [progress, setProgress] = useState(0);
@@ -24,11 +25,45 @@ export const Generated = ({ val, onComplete }) => {
       </Box>
       {(progress < val) ?
         <>
-          <Button variant="contained" sx={{padding:'20px'}} onClick={() => setProgress(progress + 1)}>Target</Button>
+          <Button variant="contained" sx={(theme) => ({
+            p: 1,
+            fontSize: '1.2rem',
+      [theme.breakpoints.down("sm")]: {
+        p: 2,
+                fontSize: '1.3rem',
+
+      },
+      [theme.breakpoints.between("sm", "md")]: {
+        p: 3.5,
+                fontSize: '2.3rem',
+
+      },
+      [theme.breakpoints.up("md")]: {
+        p: 4,
+                fontSize: '2.6rem',
+
+      }
+    })} onClick={() => setProgress(progress + 1)}>Target</Button>
         </>
         :
         <>
-          <Button variant="contained" color='success' sx={{padding:'20px'}} onClick={() => nextSetClicked()}>Next Set</Button>
+          <Button variant="contained" color='success' sx={(theme) => ({
+            p: 1,
+            fontSize: '1.2rem',
+      [theme.breakpoints.down("sm")]: {
+        p: 2,
+        fontSize: '1.5rem',
+      },
+      [theme.breakpoints.between("sm", "md")]: {
+        p: 4,
+        fontSize: '2.6rem',
+      },
+      [theme.breakpoints.up("md")]: {
+        p: 5,
+        fontSize: '3.5rem',
+
+      }
+    })} onClick={() => nextSetClicked()}>Next Set</Button>
         </>
       }
       </>
