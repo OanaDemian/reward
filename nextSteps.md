@@ -3,5 +3,7 @@
 #### change the default average from 1 to 3(done)
 #### store last selected current average in local storage and default to it on fresh (done)
 - about component (in progress)
+- install component
+- app title
 - number of sets (future goal)
 
