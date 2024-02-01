@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import { generateValues } from "../utils/generateValues";
 import { Generated } from "./Generated";
 import { CloseRewardView } from "./CloseRewardView";
-import { Stack } from '@mui/material';
-
+import { Stack } from "@mui/material";
 
 export const Reward = ({ average, setAverage }) => {
-
   const [trialsToRewards, setTrialsToRewards] = useState([]);
   const [currentTrial, setCurrentTrial] = useState(0);
   useEffect(() => {
@@ -21,12 +19,15 @@ export const Reward = ({ average, setAverage }) => {
         setTrialsToRewards(generateValues(5, average, 1, average * 2));
         return 0;
       }
-    })
-  }
+    });
+  };
   return (
-    <Stack  spacing={{ xs: 1, sm: 2, md: 4 }} direction="column" flexWrap="wrap">
-      <CloseRewardView setAverage={setAverage}/>
-      <Generated val={trialsToRewards[currentTrial]} onComplete={trialCompleted} />
-   </Stack>
-  )
-}
+    <Stack spacing={{ xs: 1, sm: 2, md: 4 }} direction="column" flexWrap="wrap">
+      <CloseRewardView setAverage={setAverage} />
+      <Generated
+        val={trialsToRewards[currentTrial]}
+        onComplete={trialCompleted}
+      />
+    </Stack>
+  );
+};

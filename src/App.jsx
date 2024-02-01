@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { RewardGiver } from './components/RewardGiver';
+import { About } from './components/About';
 
 const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
@@ -20,7 +21,8 @@ function MyApp() {
           <div style={{width:'100%', position:'relative'}}>
           <Button variant="outlined" aria-label={theme.palette.mode} sx={{ mr: 1, mt:1, position:'absolute', right:'100%', transform:'translate(100vw, 0)', padding:'5px', minWidth:'0' }} onClick={colorMode.toggleColorMode} color="inherit">
                 {theme.palette.mode === 'dark' ? <Brightness4Icon/> : <Brightness7Icon/>}
-            </Button>
+          </Button>
+          <About/>
           </div>
           <Box
             sx={{
