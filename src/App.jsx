@@ -10,30 +10,19 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import { RewardGiver } from "./components/RewardGiver";
 import { HamburgerMenu } from "./components/HamburgerMenu";
-import { ColorModeContext } from "./contexts/colorModeContext";
+import {Install} from "./components/Install"
 
 export function App() {
   const theme = useTheme();
-  const colorMode = useContext(ColorModeContext);
-    // theme.typography.h1 = {
-    //   fontSize: "1rem",
-    //   "@media (max-width:300px)": {
-    //     fontSize: "1rem",
-    //     padding:"10px"
-    //   },
-    //   [theme.breakpoints.between("sx", "sm")]: {
-    //     fontSize: "1.3rem",
-    //   },
-    //   [theme.breakpoints.between("sm", "md")]: {
-    //     fontSize: "1.5rem",
-    //   },
-    //   [theme.breakpoints.between("md", "lg")]: {
-    //     fontSize: "2.5rem",
-    //   },
-    //   [theme.breakpoints.up("lg")]: {
-    //     fontSize: "3rem",
-    //   },
-    // };
+  const [installVisible, setInstallVisible] = useState(false)
+
+  const showInstallInstructions = () => {
+    setInstallVisible(true)
+  }
+  
+  const hideInstallInstruction = () => {
+    setInstallVisible(false)
+  }
 
   return (
     <>
@@ -56,7 +45,7 @@ export function App() {
                 </Typography>
               </ThemeProvider>
             <Box sx={{ marginLeft: 'auto' }}>
-              <Button
+              {/* <Button
                 variant="outlined"
                 aria-label={theme.palette.mode}
                 sx={{
@@ -76,8 +65,8 @@ export function App() {
                 ) : (
                   <Brightness7Icon />
                 )}
-              </Button>
-              <HamburgerMenu/>
+              </Button> */}
+              <HamburgerMenu showInstallInstructions={showInstallInstructions} />
             </Box>
           </Box>
         </div>
@@ -100,6 +89,8 @@ export function App() {
           </Stack>
         </Box>
       </div>
+      <Install isVisible={installVisible} closeInstallInstructions={hideInstallInstruction} />
+
     </>
   );
 }

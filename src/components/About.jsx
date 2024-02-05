@@ -21,7 +21,6 @@ export const About = () => {
   const theme = useTheme();
   const [isClicked, setIsClicked] = useState(false);
   const [showMore, setShowMore] = useState(false);
-  // get rid of 2 above and make showMore a prop
 
   const handleClick = () => {
     setIsClicked(!isClicked);

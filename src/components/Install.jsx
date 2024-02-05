@@ -7,43 +7,17 @@ import Typography from "@mui/material/Typography";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import Link from "@mui/material/Link"
-import InstallMobileIcon from '@mui/icons-material/InstallMobile';
 import CloseIcon from "@mui/icons-material/Close";
 import { grey } from "@mui/material/colors";
 
 
 
-export const Install = () => {
-  const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  };
-
-  const handleClose = () => {
-    setIsClicked(false);
-  };
-
-  return (
+export const Install = ({isVisible, closeInstallInstructions}) => (
     <>
-      <Button
-        variant="outlined"
-        sx={{
-          mr: 10,
-          mt: 1,
-          position: "absolute",
-          right: "100%",
-          transform: "translate(100vw, 0)",
-          padding: "5px",
-          minWidth: "0"
-        }}
-        onClick={handleClick}
-      ><InstallMobileIcon/>
-      </Button>
-      {isClicked ? (
-        <Dialog open={isClicked} onClose={handleClose}>
+      {isVisible ? (
+        <Dialog open={isVisible} onClose={() => closeInstallInstructions()}>
           <DialogActions>
-            <Button variant="text" onClick={handleClose}>
+            <Button variant="text" onClick={() => closeInstallInstructions()}>
                             <CloseIcon sx={{ color: grey[900] }} fontSize="medium" />
 
             </Button>
@@ -131,4 +105,3 @@ export const Install = () => {
       )}
     </>
   );
-};

@@ -1,19 +1,16 @@
-import MenuIcon from '@mui/icons-material/Menu';
-import { About } from './About';
-import {Install} from './Install';  
+import MenuIcon from "@mui/icons-material/Menu";
+import { About } from "./About";
 
-
-
-import { useState } from 'react'; 
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import { useState } from "react";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import IconButton from "@mui/material/IconButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
 
 const ITEM_HEIGHT = 48;
 
-export const HamburgerMenu = () => {
+export const HamburgerMenu = ({showInstallInstructions}) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
@@ -25,54 +22,41 @@ export const HamburgerMenu = () => {
     setAnchorEl(null);
   };
 
-
   return (
-       <div>
+    <div>
       <IconButton
         aria-label="more"
         id="long-button"
-        aria-controls={open ? 'long-menu' : undefined}
-        aria-expanded={open ? 'true' : undefined}
+        aria-controls={open ? "long-menu" : undefined}
+        aria-expanded={open ? "true" : undefined}
         aria-haspopup="true"
         onClick={handleHamburgerClick}
       >
-                <MenuIcon />
-
+        <MenuIcon />
       </IconButton>
       <Menu
         id="long-menu"
         MenuListProps={{
-          'aria-labelledby': 'long-button',
+          "aria-labelledby": "long-button",
         }}
         anchorEl={anchorEl}
         open={open}
         onClose={handleHamburgerClose}
-        // PaperProps={{
-        //   style: {
-        //     maxHeight: ITEM_HEIGHT * 4.5,
-        //     width: '20ch',
-        //   },
-        // }} 
-      >
-        
-        <MenuItem>
-            <ListItemIcon>
 
-              <About fontSize="small" />
+      >
+        <MenuItem>
+          <ListItemIcon>
+            <About fontSize="small" />
           </ListItemIcon>
           <ListItemText>About</ListItemText>
-
         </MenuItem>
-        
-        <MenuItem >
-                    <ListItemIcon>
 
-            <Install fontSize="small"/>
-                      </ListItemIcon>
+        <MenuItem onClick={() => showInstallInstructions()}>
+          <ListItemIcon>
+          </ListItemIcon>
           <ListItemText>Install</ListItemText>
-
-          </MenuItem>
-        </Menu>
+        </MenuItem>
+      </Menu>
     </div>
   );
-}
+};
