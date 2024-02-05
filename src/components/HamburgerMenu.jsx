@@ -10,7 +10,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 const ITEM_HEIGHT = 48;
 
-export const HamburgerMenu = ({showInstallInstructions}) => {
+export const HamburgerMenu = ({setInstallVisible}) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
@@ -51,7 +51,7 @@ export const HamburgerMenu = ({showInstallInstructions}) => {
           <ListItemText>About</ListItemText>
         </MenuItem>
 
-        <MenuItem onClick={() => showInstallInstructions()}>
+        <MenuItem onClick={() => setInstallVisible(true)}>
           <ListItemIcon>
           </ListItemIcon>
           <ListItemText>Install</ListItemText>

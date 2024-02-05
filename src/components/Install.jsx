@@ -12,12 +12,12 @@ import { grey } from "@mui/material/colors";
 
 
 
-export const Install = ({isVisible, closeInstallInstructions}) => (
+export const Install = ({isVisible, setInstallVisible}) => (
     <>
       {isVisible ? (
-        <Dialog open={isVisible} onClose={() => closeInstallInstructions()}>
+        <Dialog open={isVisible} onClose={() => setInstallVisible(false)}>
           <DialogActions>
-            <Button variant="text" onClick={() => closeInstallInstructions()}>
+            <Button variant="text" onClick={() => setInstallVisible(false)}>
                             <CloseIcon sx={{ color: grey[900] }} fontSize="medium" />
 
             </Button>

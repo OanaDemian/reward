@@ -16,14 +16,6 @@ export function App() {
   const theme = useTheme();
   const [installVisible, setInstallVisible] = useState(false)
 
-  const showInstallInstructions = () => {
-    setInstallVisible(true)
-  }
-  
-  const hideInstallInstruction = () => {
-    setInstallVisible(false)
-  }
-
   return (
     <>
       <div>
@@ -66,7 +58,7 @@ export function App() {
                   <Brightness7Icon />
                 )}
               </Button> */}
-              <HamburgerMenu showInstallInstructions={showInstallInstructions} />
+              <HamburgerMenu setInstallVisible={setInstallVisible} />
             </Box>
           </Box>
         </div>
@@ -89,7 +81,7 @@ export function App() {
           </Stack>
         </Box>
       </div>
-      <Install isVisible={installVisible} closeInstallInstructions={hideInstallInstruction} />
+      <Install isVisible={installVisible} setInstallVisible={setInstallVisible} />
 
     </>
   );
