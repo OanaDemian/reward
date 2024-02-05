@@ -21,6 +21,7 @@ export const About = () => {
   const theme = useTheme();
   const [isClicked, setIsClicked] = useState(false);
   const [showMore, setShowMore] = useState(false);
+  // get rid of 2 above and make showMore a prop
 
   const handleClick = () => {
     setIsClicked(!isClicked);
@@ -125,7 +126,7 @@ export const About = () => {
                 target="_blank"
                 rel="noopener"
                 href="https://www.verywellmind.com/what-is-a-schedule-of-reinforcement-2794864"
-                underline="always"
+                underline="hover"
               >
                 {"Schedules of Reinforcement"}
               </Link>

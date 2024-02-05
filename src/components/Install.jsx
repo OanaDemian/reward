@@ -6,8 +6,12 @@ import ListItem from "@mui/material/ListItem";
 import Typography from "@mui/material/Typography";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
+import Link from "@mui/material/Link"
 import InstallMobileIcon from '@mui/icons-material/InstallMobile';
+import CloseIcon from "@mui/icons-material/Close";
+import { grey } from "@mui/material/colors";
+
+
 
 export const Install = () => {
   const [isClicked, setIsClicked] = useState(false);
@@ -31,7 +35,7 @@ export const Install = () => {
           right: "100%",
           transform: "translate(100vw, 0)",
           padding: "5px",
-          minWidth: "0",
+          minWidth: "0"
         }}
         onClick={handleClick}
       ><InstallMobileIcon/>
@@ -40,6 +44,8 @@ export const Install = () => {
         <Dialog open={isClicked} onClose={handleClose}>
           <DialogActions>
             <Button variant="text" onClick={handleClose}>
+                            <CloseIcon sx={{ color: grey[900] }} fontSize="medium" />
+
             </Button>
           </DialogActions>
 
@@ -57,7 +63,7 @@ export const Install = () => {
                 display: "block",
               }}
             >
-              How To Install Variable Ratio Generator
+              How To Install
             </Typography>
             <Typography
               variant="h3"
@@ -73,9 +79,11 @@ export const Install = () => {
               <ListItem sx={{ display: "list-item" }}>
                 Open Safari.
               </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
-                Navigate to https://practicalplay.co.uk/.
+              <ListItem sx={{ display: "list-item",  component:"a"}}>
+                Navigate to 
+                <Link href="https://practicalplay.co.uk/" underline="hover" variant="body2" target="_blank" rel="noopener">{' Variable Ratio Generator' }</Link>.
               </ListItem>
+          
               <ListItem sx={{ display: "list-item" }}>
                 Tap on the Share button.
               </ListItem>
@@ -101,8 +109,9 @@ export const Install = () => {
               <ListItem sx={{ display: "list-item" }}>
                 Open Google Chrome.
               </ListItem>
-              <ListItem sx={{ display: "list-item" }}>
-                Navigate to https://practicalplay.co.uk/
+            <ListItem sx={{ display: "list-item",  component:"a"}}>
+                Navigate to 
+                <Link href="https://practicalplay.co.uk/" underline="hover" variant="body2" target="_blank" rel="noopener">{' Variable Ratio Generator' }</Link>.
               </ListItem>
               <ListItem sx={{ display: "list-item" }}>
                 Tap on the overflow menu (three dots) in the upper-right corner.
