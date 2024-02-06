@@ -2,11 +2,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import Menu from "@mui/material/Menu";
 import IconButton from "@mui/material/IconButton";
-// import InfoIcon from "@mui/icons-material/Info";
+import InfoIcon from "@mui/icons-material/Info";
 import { HamburgerOption } from "./HamburgerOption";
+import DownloadIcon from '@mui/icons-material/Download';
 
-
-export const HamburgerMenu = ({setInstallVisible, setAboutVisible, setVisibility, title}) => {
+export const HamburgerMenu = ({setInstallVisible, setAboutVisible, setVisibility, title, icon}) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
@@ -38,10 +38,9 @@ export const HamburgerMenu = ({setInstallVisible, setAboutVisible, setVisibility
         anchorEl={anchorEl}
         open={open}
         onClose={handleHamburgerClose}
-
       >
-        <HamburgerOption setVisibility={() => { setAboutVisible(true) }} title="About" />
-        <HamburgerOption setVisibility={() => { setInstallVisible (true)}} title="Install" />
+        <HamburgerOption setVisibility={() => { setAboutVisible(true) }} title="About" icon={<InfoIcon/> } />
+        <HamburgerOption setVisibility={() => { setInstallVisible(true) }} title="Install" icon={<DownloadIcon/> } />
       </Menu>
     </div>
   );

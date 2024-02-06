@@ -3,9 +3,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import MenuItem from "@mui/material/MenuItem";
 
 
-export const HamburgerOption = ({ setVisibility, title }) => (
+export const HamburgerOption = ({ setVisibility, title, icon }) => (
   <MenuItem onClick={() => setVisibility(true)}>
-    <ListItemIcon>
+    <ListItemIcon>  {icon}
+
     </ListItemIcon>
     <ListItemText>{title}</ListItemText>
   </MenuItem>
