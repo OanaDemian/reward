@@ -1,14 +1,16 @@
 import { useState } from "react";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
-import { useTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import  CardMedia from "@mui/material/CardMedia";
 import { RewardGiver } from "./components/RewardGiver";
 import { HamburgerMenu } from "./components/HamburgerMenu";
 import { Install } from "./components/Install";
 import { About } from "./components/About";
 import { Theme } from "./components/Theme";
+import  rewardLogo from "./assets/RewardLogo.png"
 
 export function App({theme, colorMode}) {
   const [installVisible, setInstallVisible] = useState(false);
@@ -23,6 +25,13 @@ export function App({theme, colorMode}) {
               display: "flex",
             }}
           >
+            
+            <CardMedia
+                component="img"
+                alt="Variable Ratio Generator Logo"
+                sx={{ height:64,  width: 64, marginTop:'4px', marginLeft:'4px'}}
+                image={rewardLogo}
+              />
             <ThemeProvider theme={theme}>
               <Typography
                 variant="h2"

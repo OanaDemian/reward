@@ -1,4 +1,5 @@
 import MenuIcon from "@mui/icons-material/Menu";
+import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import { useState } from "react";
 import Menu from "@mui/material/Menu";
 import IconButton from "@mui/material/IconButton";
@@ -6,6 +7,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import { HamburgerOption } from "./HamburgerOption";
 import DownloadIcon from "@mui/icons-material/Download";
 import { Theme } from "./Theme";
+import { Box, MenuItem } from "@mui/material";
 export const HamburgerMenu = ({
   setInstallVisible,
   setAboutVisible,
@@ -37,7 +39,7 @@ export const HamburgerMenu = ({
         aria-haspopup="true"
         onClick={handleHamburgerClick}
       >
-        <MenuIcon />
+        {open ? <MenuOpenIcon /> : <MenuIcon />}
       </IconButton>
       <Menu
         id="long-menu"
@@ -48,21 +50,28 @@ export const HamburgerMenu = ({
         open={open}
         onClose={handleHamburgerClose}
       >
-        <HamburgerOption
-          setVisibility={() => {
-            setAboutVisible(true);
-          }}
-          title="About"
-          icon={<InfoIcon />}
-        />
-        <HamburgerOption
-          setVisibility={() => {
-            setInstallVisible(true);
-          }}
-          title="Install"
-          icon={<DownloadIcon />}
-        />
-        <Theme theme={theme} colorMode={colorMode} />
+        <Box onClick={handleHamburgerClose}>
+          <HamburgerOption
+            setVisibility={() => {
+              setAboutVisible(true);
+            }}
+            title="About"
+            icon={<InfoIcon />}
+          />
+        </Box>
+        <Box onClick={handleHamburgerClose}>
+          <HamburgerOption
+            setVisibility={() => {
+              setInstallVisible(true);
+            }}
+            title="Install"
+            icon={<DownloadIcon />}
+          />
+        </Box>
+
+        <Box onClick={handleHamburgerClose}>
+          <Theme theme={theme} colorMode={colorMode} />
+        </Box>
       </Menu>
     </div>
   );
