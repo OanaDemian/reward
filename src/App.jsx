@@ -10,11 +10,14 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import { RewardGiver } from "./components/RewardGiver";
 import { HamburgerMenu } from "./components/HamburgerMenu";
-import {Install} from "./components/Install"
+import { Install } from "./components/Install";
+import { About } from "./components/About";
 
 export function App() {
   const theme = useTheme();
-  const [installVisible, setInstallVisible] = useState(false)
+  const [installVisible, setInstallVisible] = useState(false);
+  const [aboutVisible, setAboutVisible] = useState(false)
+
 
   return (
     <>
@@ -58,7 +61,7 @@ export function App() {
                   <Brightness7Icon />
                 )}
               </Button> */}
-              <HamburgerMenu setInstallVisible={setInstallVisible} />
+              <HamburgerMenu setInstallVisible={setInstallVisible} setAboutVisible={setAboutVisible}  />
             </Box>
           </Box>
         </div>
@@ -82,6 +85,7 @@ export function App() {
         </Box>
       </div>
       <Install isVisible={installVisible} setInstallVisible={setInstallVisible} />
+      <About isVisible={aboutVisible} setAboutVisible={setAboutVisible} />
 
     </>
   );
