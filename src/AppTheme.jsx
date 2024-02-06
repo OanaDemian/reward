@@ -29,7 +29,7 @@ export const AppTheme = () => {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline>
-          <App />
+          <App theme={theme} colorMode={colorMode} />
         </CssBaseline>
       </ThemeProvider>
     </ColorModeContext.Provider>

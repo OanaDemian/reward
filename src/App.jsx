@@ -1,67 +1,43 @@
-import { useContext, useState, useMemo } from "react";
+import { useState } from "react";
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import { useTheme, ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { useTheme, ThemeProvider } from "@mui/material/styles";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import { RewardGiver } from "./components/RewardGiver";
 import { HamburgerMenu } from "./components/HamburgerMenu";
 import { Install } from "./components/Install";
 import { About } from "./components/About";
+import { Theme } from "./components/Theme";
 
-export function App() {
-  const theme = useTheme();
+export function App({theme, colorMode}) {
   const [installVisible, setInstallVisible] = useState(false);
-  const [aboutVisible, setAboutVisible] = useState(false)
-
+  const [aboutVisible, setAboutVisible] = useState(false);
 
   return (
     <>
       <div>
         <div style={{ width: "100%", position: "relative" }}>
           <Box
-            sx={
-              {
-                display: 'flex',  
-              }
-            }
+            sx={{
+              display: "flex",
+            }}
           >
-              <ThemeProvider theme={theme}>
-                <Typography
+            <ThemeProvider theme={theme}>
+              <Typography
                 variant="h2"
-                // component="h2"
                 sx={{ display: "flex", justifyContent: "center", flex: "auto" }}
-                >
-                  Variable Ratio Generator
-                </Typography>
-              </ThemeProvider>
-            <Box sx={{ marginLeft: 'auto' }}>
-              {/* <Button
-                variant="outlined"
-                aria-label={theme.palette.mode}
-                sx={{
-                  mr: 1,
-                  mt: 1,
-                  position: "absolute",
-                  right: "100%",
-                  transform: "translate(100vw, 0)",
-                  padding: "5px",
-                  minWidth: "0",
-                }}
-                onClick={colorMode.toggleColorMode}
-                color="inherit"
               >
-                {theme.palette.mode === "dark" ? (
-                  <Brightness4Icon />
-                ) : (
-                  <Brightness7Icon />
-                )}
-              </Button> */}
-              <HamburgerMenu setInstallVisible={setInstallVisible} setAboutVisible={setAboutVisible}  />
+                Variable Ratio Generator
+              </Typography>
+            </ThemeProvider>
+            <Box sx={{ marginLeft: "auto" }}>
+              <HamburgerMenu
+                setInstallVisible={setInstallVisible}
+                setAboutVisible={setAboutVisible}
+                theme={theme}
+                colorMode={colorMode}
+              />
             </Box>
           </Box>
         </div>
@@ -84,9 +60,12 @@ export function App() {
           </Stack>
         </Box>
       </div>
-      <Install isVisible={installVisible} setInstallVisible={setInstallVisible} />
+      <Install
+        isVisible={installVisible}
+        setInstallVisible={setInstallVisible}
+      />
       <About isVisible={aboutVisible} setAboutVisible={setAboutVisible} />
-
+      <Theme theme={theme} colorMode={colorMode}/>
     </>
   );
 }
