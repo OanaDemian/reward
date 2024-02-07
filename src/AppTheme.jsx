@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { App } from "./App"
-import { ColorModeContext } from "./contexts/colorModeContext";
+import { ColorModeContext } from "./contexts/ColorModeContext";
 
 export const AppTheme = () => {
   const [mode, setMode] = useState("light");
