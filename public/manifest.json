@@ -1,21 +1,22 @@
 {
   "name": "VariableRatioGenerator",
+  "author": "Oana Demian",
   "short_name": "VRGenerator",
   "display": "standalone",
   "background_color": "#fff",
   "icons": [
     {
-      "src": "src/assets/logo/progressReward_48.png",
+      "src": "/logo/progressReward_48.png",
       "sizes": "48x48",
       "type": "image/png"
     },
     {
-      "src": "src/assets/logo/progressReward_72.png",
+      "src": "/logo/progressReward_72.png",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "src/assets/logo/progressReward_1024.png",
+      "src": "/logo/progressReward_1024.png",
       "sizes": "1024x1024",
       "type": "image/png"
     }
