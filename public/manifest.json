@@ -1,0 +1,24 @@
+{
+  "name": "VariableRatioGenerator",
+  "short_name": "VRGenerator",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A readable Hacker News app.",
+  "icons": [
+    {
+      "src": "src/assets/BasicSchedulesOfReinforcement.png",
+      // "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "src/assets/RewardLogo.png",
+      // "sizes": "72x72",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education"],
+  "description": "An application that allows you to generate a sequence of numbers that average a given value. This helps you reinforce your learner's behaviour after an unpredictable number of responses, creating a steady, high rate of response.",
+  "start_url": "https://practicalplay.co.uk/",
+  "scope": "/app/"  
+}
