@@ -9,7 +9,6 @@ import { RewardGiver } from "./components/RewardGiver";
 import { HamburgerMenu } from "./components/HamburgerMenu";
 import { Install } from "./components/Install";
 import { About } from "./components/About";
-import { Theme } from "./components/Theme";
 import  rewardLogo from "./assets/RewardLogo.png"
 
 export function App({theme, colorMode}) {

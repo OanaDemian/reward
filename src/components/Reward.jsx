@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { generateValues } from "../utils/generateValues";
 import { Generated } from "./Generated";
 import { CloseRewardView } from "./CloseRewardView";
-import { Stack } from "@mui/material";
+import Stack from "@mui/material/Stack";
 
 export const Reward = ({ average, setAverage }) => {
   const [trialsToRewards, setTrialsToRewards] = useState([]);

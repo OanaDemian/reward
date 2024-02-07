@@ -1,8 +1,5 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
-import InfoIcon from "@mui/icons-material/Info";
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import { useTheme } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";

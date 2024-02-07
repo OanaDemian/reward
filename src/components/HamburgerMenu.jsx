@@ -7,7 +7,8 @@ import InfoIcon from "@mui/icons-material/Info";
 import { HamburgerOption } from "./HamburgerOption";
 import DownloadIcon from "@mui/icons-material/Download";
 import { Theme } from "./Theme";
-import { Box, MenuItem } from "@mui/material";
+import Box from "@mui/material/Box";
+
 export const HamburgerMenu = ({
   setInstallVisible,
   setAboutVisible,
