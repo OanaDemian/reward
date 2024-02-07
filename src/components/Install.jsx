@@ -65,10 +65,10 @@ export const Install = ({ isVisible, setInstallVisible }) => (
           Tap on the Share button.
         </ListItem>
         <ListItem sx={{ display: "list-item" }}>
-          Select Add to Home Screen.
+          Scroll down and select Add to Home Screen.
         </ListItem>
         <ListItem sx={{ display: "list-item" }}>
-          5. Tap Add in the upper-right corner.
+          Tap Add in the upper-right corner.
         </ListItem>
       </List>
       <Typography
