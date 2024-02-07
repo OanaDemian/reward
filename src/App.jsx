@@ -74,7 +74,6 @@ export function App({theme, colorMode}) {
         setInstallVisible={setInstallVisible}
       />
       <About isVisible={aboutVisible} setAboutVisible={setAboutVisible} />
-      <Theme theme={theme} colorMode={colorMode}/>
     </>
   );
 }
