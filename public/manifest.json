@@ -39,7 +39,8 @@
     {
       "src": "/progressReward_512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+       "purpose": "maskable"
     },
        {
       "src": "/progressReward_1024x1024.png",
