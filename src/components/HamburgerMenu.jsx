@@ -1,6 +1,6 @@
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Menu from "@mui/material/Menu";
 import IconButton from "@mui/material/IconButton";
 import InfoIcon from "@mui/icons-material/Info";
@@ -9,15 +9,10 @@ import DownloadIcon from "@mui/icons-material/Download";
 import { Theme } from "./Theme";
 import Box from "@mui/material/Box";
 
+
 export const HamburgerMenu = ({
   setInstallVisible,
   setAboutVisible,
-  setColorModeVisible,
-  setVisibility,
-  title,
-  icon,
-  theme,
-  colorMode,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -71,7 +66,7 @@ export const HamburgerMenu = ({
         </Box>
 
         <Box onClick={handleHamburgerClose}>
-          <Theme theme={theme} colorMode={colorMode} />
+          <Theme />
         </Box>
       </Menu>
     </div>

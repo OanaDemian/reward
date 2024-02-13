@@ -26,12 +26,12 @@ export const AppTheme = () => {
   );
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
+    <ColorModeContext.Provider value={{ mode: mode, toggleColorMode: colorMode.toggleColorMode }}>
       <ThemeProvider theme={theme}>
         <CssBaseline>
-          <App theme={theme} colorMode={colorMode} />
+          <App />
         </CssBaseline>
       </ThemeProvider>
-    </ColorModeContext.Provider>
+     </ColorModeContext.Provider>
   );
 };
