@@ -1,6 +1,7 @@
 {
   "name": "VariableRatioGenerator",
   "author": "Oana Demian",
+  "lang":"English",
   "short_name": "VRGenerator",
   "display": "standalone",
   "background_color": "#fff",
@@ -35,7 +36,12 @@
       "sizes": "384x384",
       "type": "image/png"
     },
-      
+          {
+      "src": "/progressReward_transparent_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+       "purpose": "any"
+    },
     {
       "src": "/progressReward_512x512.png",
       "sizes": "512x512",
