@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { App } from "./App"
 import { ColorModeContext } from "./contexts/ColorModeContext";
@@ -16,13 +16,18 @@ export const AppTheme = () => {
     []
   );
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode,
-        },
-      }),
+  const theme = useMemo(() => {
+    let theme = createTheme({
+      body1: {
+        htmlFontSize: 16,
+      },
+      palette: {
+        mode,
+      },
+    })
+    theme = responsiveFontSizes(theme)
+    return theme
+  }, 
     [mode]
   );
 

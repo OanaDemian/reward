@@ -34,7 +34,7 @@ export function App() {
                 variant="h2"
                 sx={{ display: "flex", justifyContent: "center", flex: "auto" }}
               >
-                Variable Ratio Generator
+                Variable Ratio
               </Typography>
             <Box sx={{ marginLeft: "auto" }}>
               <HamburgerMenu

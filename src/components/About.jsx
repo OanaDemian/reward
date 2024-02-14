@@ -42,32 +42,18 @@ export const About = ({ isVisible, setAboutVisible }) => {
 
       <DialogContent>
         <Typography
-          variant="h1"
-          component="h2"
+          variant="h3"
           sx={{
-            fontWeight: "600",
-            fontSize: "28px",
-            letterSpacing: "0",
-            textTransform: "none",
             textAlign: "left",
-            marginBottom: "2px",
-            marginTop: "2px",
-            display: "block",
+            fontWeight: "bold"
           }}
         >
           How To Use
         </Typography>
-        <Typography
-          variant="h3"
-          sx={{
-            fontWeight: "400",
-            fontSize: "20px",
-            lineHeight: "24px",
-          }}
-        >
+        <Typography>
           Reward after the average number of responses has occurred.
         </Typography>
-        <List sx={{ listStyleType: "disc" }}>
+        <List sx={{ listStyleType: "disc", pl: 2.25 }}>
           <ListItem sx={{ display: "list-item" }}>
             Select your average from the dropdown list and press{" "}
             <strong>START</strong>.
@@ -89,13 +75,9 @@ export const About = ({ isVisible, setAboutVisible }) => {
           </ListItem>
         </List>
         <Typography
-          variant="h1"
+          variant="h3"
           sx={{
-            fontWeight: "bold",
-            fontSize: "20px",
-            marginBottom: "8px",
-            marginTop: "4px",
-            display: "block",
+            fontWeight: "bold"
           }}
         >
           Schedules of Reinforcement

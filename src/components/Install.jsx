@@ -19,31 +19,13 @@ export const Install = ({ isVisible, setInstallVisible }) => (
 
     <DialogContent>
       <Typography
-        variant="h1"
-        sx={{
-          fontWeight: "600",
-          fontSize: "28px",
-          letterSpacing: "0",
-          textTransform: "none",
-          textAlign: "left",
-          marginBottom: "2px",
-          marginTop: "2px",
-          display: "block",
-        }}
-      >
-        How To Install
-      </Typography>
-      <Typography
         variant="h3"
         sx={{
-          fontWeight: "600",
-          fontSize: "20px",
-          lineHeight: "24px",
           marginBottom: "5px",
         }}
       >
         {" "}
-        on your iPhone
+        Install on iPhone
       </Typography>
       <List sx={{ listStyleType: "disc" }}>
         <ListItem sx={{ display: "list-item" }}>Open Safari.</ListItem>
@@ -74,15 +56,12 @@ export const Install = ({ isVisible, setInstallVisible }) => (
       <Typography
         variant="h3"
         sx={{
-          fontWeight: "600",
-          fontSize: "20px",
-          lineHeight: "24px",
           marginBottom: "5px",
           marginTop: "20px",
         }}
       >
         {" "}
-        on your Android phone
+        Install on Android
       </Typography>
       <List sx={{ listStyleType: "disc" }}>
         <ListItem sx={{ display: "list-item" }}>Open Google Chrome.</ListItem>
