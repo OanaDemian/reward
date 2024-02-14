@@ -1,0 +1,1 @@
+export const toggleColorMode = (prevMode) => (prevMode === 'light') ? 'dark' : 'light';

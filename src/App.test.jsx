@@ -1,9 +1,9 @@
-import { render, screen, testTheme } from '../tests/testUtils'
+import { render, screen } from '../tests/testUtils'
 import { App } from './App'
 
 describe('App', () => {
   it('renders the App component', async () => {
-    render(<App theme={testTheme} colorMode="light" />)
+    render(<App />)
     expect(await screen.findByRole('heading', { name: 'Variable Ratio Generator' })).toBeVisible()
   })
 })
