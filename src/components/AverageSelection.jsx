@@ -7,10 +7,7 @@ import Button from "@mui/material/Button";
 import { Stack } from "@mui/material";
 
 export const AverageSelection = ({ setAverage }) => {
-  const currentAverage = () => {
-    const average = localStorage.getItem("selectedAverage");
-    return average !== undefined ? JSON.parse(average) : "";
-  };
+  const currentAverage = () => localStorage.getItem("selectedAverage");
   const [selectedAverage, setSelectedAverage] = useState(currentAverage());
 
   const handleChange = (event) => {
@@ -20,7 +17,9 @@ export const AverageSelection = ({ setAverage }) => {
   };
 
   useEffect(() => {
-    localStorage.setItem("selectedAverage", JSON.stringify(selectedAverage));
+    if (typeof selectedAverage === 'number') {
+      localStorage.setItem("selectedAverage", selectedAverage.toString());
+    }
   }, [selectedAverage]);
 
   return (
@@ -44,7 +43,7 @@ export const AverageSelection = ({ setAverage }) => {
           <Select
             labelId="demo-simple-select-autowidth-label"
             id="demo-simple-select-autowidth"
-            value={selectedAverage}
+            value={selectedAverage || ""}
             onChange={handleChange}
             label="Average"
           >
@@ -78,6 +77,7 @@ export const AverageSelection = ({ setAverage }) => {
             },
           })}
           onClick={() => setAverage(selectedAverage)}
+          disabled={!selectedAverage}
         >
           Start
         </Button>
