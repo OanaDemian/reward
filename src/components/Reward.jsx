@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { generateValues } from "../utils/generateValues";
-import { Generated } from "./Generated";
+import { RewardWheel } from "./RewardWheel";
 import { CloseRewardView } from "./CloseRewardView";
-import Stack from "@mui/material/Stack";
+import Paper from '@mui/material/Paper';
 
 export const Reward = ({ average, setAverage }) => {
   const [trialsToRewards, setTrialsToRewards] = useState([]);
@@ -22,12 +22,12 @@ export const Reward = ({ average, setAverage }) => {
     });
   };
   return (
-    <Stack spacing={{ xs: 5, sm: 8, md: 10 }} direction="column" flexWrap="wrap">
-      <CloseRewardView setAverage={setAverage} />
-      <Generated
-        val={trialsToRewards[currentTrial]}
-        onComplete={trialCompleted}
-      />
-    </Stack>
+    <Paper elevation={4}> 
+        <CloseRewardView setAverage={setAverage} />
+        <RewardWheel
+          val={trialsToRewards[currentTrial]}
+          onComplete={trialCompleted}
+        />
+    </Paper>
   );
 };

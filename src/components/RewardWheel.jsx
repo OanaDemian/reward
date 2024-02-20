@@ -4,8 +4,9 @@ import Button from "@mui/material/Button";
 import { Box } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
 import { blue } from "@mui/material/colors";
+import Stack from "@mui/material/Stack";
 
-export const Generated = ({ val, onComplete }) => {
+export const RewardWheel = ({ val, onComplete }) => {
   const [progress, setProgress] = useState(0);
   const theme = useTheme();
   const nextSetClicked = () => {
@@ -13,7 +14,7 @@ export const Generated = ({ val, onComplete }) => {
     onComplete();
   };
   return (
-    <>
+    <Stack spacing={{ xs: 2, sm: 4, md: 6 }} direction="column" flexWrap="wrap" sx={{padding: "8px"}}>
       <Box
         sx={{
           position: "relative",
@@ -94,15 +95,15 @@ export const Generated = ({ val, onComplete }) => {
               fontSize: "1.2rem",
               [theme.breakpoints.down("sm")]: {
                 p: 2,
-                fontSize: "1.5rem",
+                fontSize: "1.3rem",
               },
               [theme.breakpoints.between("sm", "md")]: {
                 p: 3,
-                fontSize: "2.4rem",
+                fontSize: "2.2rem",
               },
               [theme.breakpoints.up("md")]: {
                 p: 3.5,
-                fontSize: "2.8rem",
+                fontSize: "2.5rem",
               },
             })}
             onClick={() => nextSetClicked()}
@@ -111,6 +112,6 @@ export const Generated = ({ val, onComplete }) => {
           </Button>
         </>
       )}
-    </>
+    </Stack>
   );
 };
