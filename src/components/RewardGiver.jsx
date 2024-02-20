@@ -11,7 +11,7 @@ export const RewardGiver = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            minHeight: "calc(100vh - 88px)",
+            height: "calc(100% - 88px)",
             ml: "auto",
             mr: "auto",
             borderRadius: 1,
