@@ -22,7 +22,7 @@ export const Reward = ({ average, setAverage }) => {
     });
   };
   return (
-    <Stack spacing={{ xs: 1, sm: 2, md: 4 }} direction="column" flexWrap="wrap">
+    <Stack spacing={{ xs: 5, sm: 8, md: 10 }} direction="column" flexWrap="wrap">
       <CloseRewardView setAverage={setAverage} />
       <Generated
         val={trialsToRewards[currentTrial]}

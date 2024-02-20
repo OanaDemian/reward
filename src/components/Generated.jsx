@@ -19,8 +19,8 @@ export const Generated = ({ val, onComplete }) => {
           position: "relative",
           height: "80vw",
           width: "80vw",
-          maxHeight: "60vh",
-          maxWidth: "60vh",
+          maxHeight: "calc(60vh - 88px)",
+          maxWidth: "calc(60vh - 88px)",
         }}
       >
         <Box

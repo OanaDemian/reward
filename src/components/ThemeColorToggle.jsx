@@ -8,7 +8,7 @@ import { useContext } from 'react'
 import { useTheme } from "@mui/material/styles";
 
 
-export const Theme = () => {
+export const ThemeColorToggle = () => {
   const colorModeContext = useContext(ColorModeContext);
   const theme = useTheme();
 
