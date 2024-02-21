@@ -13,28 +13,28 @@ export function App() {
 
   return (
     <>
-        <div style={{ width: "100%", position: "relative" }}>
-          <Box
-            sx={{
-              display: "flex",
-              padding: "8px"
-            }}
+      <div style={{ width: "100%", position: "relative" }}>
+        <Box
+          sx={{
+            display: "flex",
+            padding: "8px",
+          }}
+        >
+          <Typography
+            variant="h2"
+            component="h1"
+            sx={{ display: "flex", flex: "auto", fontWeight: "bold" }}
           >
-              <Typography
-              variant="h2"
-              component="h1"
-                sx={{ display: "flex", flex: "auto", fontWeight:"bold" }}
-              >
-                Variable Ratio
-              </Typography>
-              <HamburgerMenu
-                setInstallVisible={setInstallVisible}
-                setAboutVisible={setAboutVisible}
-              />
-          </Box>
-        </div>
-        <Divider></Divider>
-        <RewardGiver />
+            Variable Ratio
+          </Typography>
+          <HamburgerMenu
+            setInstallVisible={setInstallVisible}
+            setAboutVisible={setAboutVisible}
+          />
+        </Box>
+      </div>
+      <Divider></Divider>
+      <RewardGiver />
       <Install
         isVisible={installVisible}
         setInstallVisible={setInstallVisible}

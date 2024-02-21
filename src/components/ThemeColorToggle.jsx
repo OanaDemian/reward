@@ -4,9 +4,8 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import MenuItem from "@mui/material/MenuItem";
 import { ColorModeContext } from "../contexts/ColorModeContext";
-import { useContext } from 'react'
+import { useContext } from "react";
 import { useTheme } from "@mui/material/styles";
-
 
 export const ThemeColorToggle = () => {
   const colorModeContext = useContext(ColorModeContext);
@@ -22,7 +21,6 @@ export const ThemeColorToggle = () => {
         )}
       </ListItemIcon>
       <ListItemText>Theme</ListItemText>
-
     </MenuItem>
-  )
-}
+  );
+};

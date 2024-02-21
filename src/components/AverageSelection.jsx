@@ -6,8 +6,7 @@ import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import { Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import PropTypes from 'prop-types';
-
+import PropTypes from "prop-types";
 
 export const AverageSelection = ({ setAverage }) => {
   const currentAverage = () => localStorage.getItem("selectedAverage");
@@ -20,7 +19,7 @@ export const AverageSelection = ({ setAverage }) => {
   };
 
   useEffect(() => {
-    if (typeof selectedAverage === 'number') {
+    if (typeof selectedAverage === "number") {
       localStorage.setItem("selectedAverage", selectedAverage.toString());
     }
   }, [selectedAverage]);
@@ -33,7 +32,9 @@ export const AverageSelection = ({ setAverage }) => {
         justifyContent="center"
         alignItems="center"
       >
-        <Typography variant="body1">Select an average for your variable ratio schedule.</Typography>
+        <Typography variant="body1">
+          Select an average for your variable ratio schedule.
+        </Typography>
         <FormControl
           sx={{
             m: 10,
@@ -41,9 +42,7 @@ export const AverageSelection = ({ setAverage }) => {
           }}
           size="large"
         >
-          <InputLabel id="average-label">
-            Average
-          </InputLabel>
+          <InputLabel id="average-label">Average</InputLabel>
           <Select
             labelId="average-label"
             value={selectedAverage || ""}
@@ -74,5 +73,5 @@ export const AverageSelection = ({ setAverage }) => {
   );
 };
 AverageSelection.propTypes = {
-  setAverage: PropTypes.func
-}
+  setAverage: PropTypes.func,
+};

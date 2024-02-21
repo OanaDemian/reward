@@ -14,7 +14,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import basicSchOfReinforcement from "../assets/BasicSchedulesOfReinforcement.png";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export const About = ({ isVisible, setAboutVisible }) => {
   const [showMore, setShowMore] = useState(false);
@@ -43,10 +43,11 @@ export const About = ({ isVisible, setAboutVisible }) => {
       </DialogActions>
       <DialogContent>
         <Typography
-          variant="h4" component="h3"
+          variant="h4"
+          component="h3"
           sx={{
             textAlign: "left",
-            fontWeight: "bold"
+            fontWeight: "bold",
           }}
         >
           How To Use
@@ -55,39 +56,40 @@ export const About = ({ isVisible, setAboutVisible }) => {
         <List>
           <ListItem disablePadding>
             <ListItemText>
-            1. Select your average from the dropdown list and press{" "}
+              1. Select your average from the dropdown list and press{" "}
               <strong>START</strong>.
-              </ListItemText>
+            </ListItemText>
           </ListItem>
           <ListItem disablePadding>
             <ListItemText>
-            2. On the reward page, press the <strong>TARGET</strong> button after
-            each correct occurrence of the target behaviour. As you click, you
-              are able to see the progress.
-              </ListItemText>
+              2. On the reward page, press the <strong>TARGET</strong> button
+              after each correct occurrence of the target behaviour. As you
+              click, you are able to see the progress.
+            </ListItemText>
           </ListItem>
           <ListItem disablePadding>
             <ListItemText>
-            3. When the circle is full and <strong>NEXT SET</strong> appears,
-            deliver the reward.
+              3. When the circle is full and <strong>NEXT SET</strong> appears,
+              deliver the reward.
             </ListItemText>
           </ListItem>
           <ListItem disablePadding>
             <ListItemText>
               4. Continue repeating steps two and three.
-              </ListItemText>
+            </ListItemText>
           </ListItem>
           <ListItem disablePadding>
             <ListItemText>
               5. Pres the X button to go to the previous screen.
-              </ListItemText>
+            </ListItemText>
           </ListItem>
         </List>
         <Typography
-          variant="h4" component="h3"
+          variant="h4"
+          component="h3"
           sx={{
             fontWeight: "bold",
-            textAlign: "left"
+            textAlign: "left",
           }}
         >
           Schedules Of Reinforcement
@@ -122,9 +124,16 @@ export const About = ({ isVisible, setAboutVisible }) => {
         />
         <CardContent sx={{ padding: "5px" }}>
           <Typography variant="body2">
-            Basic Schedules Of Reinforcement <Link target="_blank"
-            rel="noopener" href="https://www.pearson.com/en-gb/subject-catalog/p/applied-behavior-analysis-global-edition/P200000003973
-" variant="body2">Cooper, Heron, and Heward, 2020</Link>
+            Basic Schedules Of Reinforcement{" "}
+            <Link
+              target="_blank"
+              rel="noopener"
+              href="https://www.pearson.com/en-gb/subject-catalog/p/applied-behavior-analysis-global-edition/P200000003973
+"
+              variant="body2"
+            >
+              Cooper, Heron, and Heward, 2020
+            </Link>
           </Typography>
         </CardContent>
       </DialogContent>
@@ -134,5 +143,5 @@ export const About = ({ isVisible, setAboutVisible }) => {
 
 About.propTypes = {
   isVisible: PropTypes.bool,
-  setAboutVisible: PropTypes.func
-}
+  setAboutVisible: PropTypes.func,
+};

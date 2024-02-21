@@ -9,7 +9,7 @@ import DialogContent from "@mui/material/DialogContent";
 import Link from "@mui/material/Link";
 import CloseIcon from "@mui/icons-material/Close";
 import { grey } from "@mui/material/colors";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export const Install = ({ isVisible, setInstallVisible }) => (
   <Dialog open={isVisible} onClose={() => setInstallVisible(false)}>
@@ -99,5 +99,5 @@ export const Install = ({ isVisible, setInstallVisible }) => (
 );
 Install.propTypes = {
   isVisible: PropTypes.bool,
-  setInstallVisible: PropTypes.func
-}
+  setInstallVisible: PropTypes.func,
+};

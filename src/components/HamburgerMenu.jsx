@@ -8,14 +8,10 @@ import { HamburgerOption } from "./HamburgerOption";
 import DownloadIcon from "@mui/icons-material/Download";
 import { ThemeColorToggle } from "./ThemeColorToggle";
 import Box from "@mui/material/Box";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-export const HamburgerMenu = ({
-  setInstallVisible,
-  setAboutVisible,
-}) => {
+export const HamburgerMenu = ({ setInstallVisible, setAboutVisible }) => {
   const [anchorEl, setAnchorEl] = useState(null);
-
 
   const open = Boolean(anchorEl);
   const handleHamburgerClick = (event) => {
@@ -27,7 +23,9 @@ export const HamburgerMenu = ({
   };
 
   return (
-    <Box sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+    <Box
+      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+    >
       <IconButton
         aria-label="more"
         id="long-button"
@@ -37,7 +35,11 @@ export const HamburgerMenu = ({
         onClick={handleHamburgerClick}
         fontSize="large"
       >
-        {open ? <MenuOpenIcon fontSize="large" /> : <MenuIcon fontSize="large" />}
+        {open ? (
+          <MenuOpenIcon fontSize="large" />
+        ) : (
+          <MenuIcon fontSize="large" />
+        )}
       </IconButton>
       <Menu
         id="long-menu"
@@ -77,5 +79,5 @@ export const HamburgerMenu = ({
 
 HamburgerMenu.propTypes = {
   setInstallVisible: PropTypes.func,
-  setAboutVisible: PropTypes.func
-}
+  setAboutVisible: PropTypes.func,
+};

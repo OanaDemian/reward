@@ -5,7 +5,7 @@ import { Box } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
 import { blue } from "@mui/material/colors";
 import Stack from "@mui/material/Stack";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 export const RewardWheel = ({ val, onComplete }) => {
   const [progress, setProgress] = useState(0);
@@ -15,7 +15,12 @@ export const RewardWheel = ({ val, onComplete }) => {
     onComplete();
   };
   return (
-    <Stack spacing={{ xs: 2, sm: 4, md: 6 }} direction="column" flexWrap="wrap" sx={{padding: "16px"}}>
+    <Stack
+      spacing={{ xs: 2, sm: 4, md: 6 }}
+      direction="column"
+      flexWrap="wrap"
+      sx={{ padding: "16px" }}
+    >
       <Box
         sx={{
           position: "relative",
@@ -61,37 +66,37 @@ export const RewardWheel = ({ val, onComplete }) => {
           }}
         />
       </Box>
-      <Box sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-      {progress < val ? (
-        <>
-          <Button
-            variant="contained"
-            onClick={() => setProgress(progress + 1)}
-            size="large"
-
-          >
-            Target
-          </Button>
-        </>
-      ) : (
-        <>
-          <Button
-            variant="contained"
-            color="success"
-                onClick={() => nextSetClicked()}
-                size="large"
-          >
-            Next Set
-          </Button>
-        </>
+      <Box
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        {progress < val ? (
+          <>
+            <Button
+              variant="contained"
+              onClick={() => setProgress(progress + 1)}
+              size="large"
+            >
+              Target
+            </Button>
+          </>
+        ) : (
+          <>
+            <Button
+              variant="contained"
+              color="success"
+              onClick={() => nextSetClicked()}
+              size="large"
+            >
+              Next Set
+            </Button>
+          </>
         )}
-        </Box>
+      </Box>
     </Stack>
-    
   );
 };
 
 RewardWheel.propTypes = {
   val: PropTypes.number,
-  onComplete: PropTypes.func
-}
+  onComplete: PropTypes.func,
+};

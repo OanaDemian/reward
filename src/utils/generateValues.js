@@ -1,5 +1,5 @@
 function getRandom(min, max) {
-  return (Math.floor(Math.random() * (max - min) + min));
+  return Math.floor(Math.random() * (max - min) + min);
 }
 export const generateValues = (size, avg, min, max) => {
   let arr = [];
@@ -35,7 +35,6 @@ export const generateValues = (size, avg, min, max) => {
         }
       }
       return x;
-
     });
   } else {
     arr = arr.map((x) => {
@@ -54,4 +53,4 @@ export const generateValues = (size, avg, min, max) => {
     });
   }
   return arr;
-}
+};
