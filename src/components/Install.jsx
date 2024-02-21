@@ -1,4 +1,3 @@
-import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -8,19 +7,30 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import Link from "@mui/material/Link";
 import CloseIcon from "@mui/icons-material/Close";
-import { grey } from "@mui/material/colors";
+import IconButton from "@mui/material/IconButton";
 import PropTypes from "prop-types";
+import Box from "@mui/material/Box";
+
 
 export const Install = ({ isVisible, setInstallVisible }) => (
   <Dialog open={isVisible} onClose={() => setInstallVisible(false)}>
     <DialogActions>
-      <Button variant="text" onClick={() => setInstallVisible(false)}>
-        <CloseIcon sx={{ color: grey[900] }} fontSize="medium" />
-      </Button>
+      <Box sx={{ display: "flex" }}>
+        <IconButton
+          variant="contained"
+          sx={{ marginLeft: "auto" }}
+          onClick={() =>  setInstallVisible(false)}
+          >
+          <CloseIcon />
+      </IconButton>
+      </Box>
     </DialogActions>
 
     <DialogContent>
-      <Typography variant="h5" component="h2">
+      <Typography variant="h5" component="h2" sx={{
+            textAlign: "left",
+            fontWeight: "bold",
+          }}>
         {" "}
         Steps to install on iPhone
       </Typography>
@@ -55,7 +65,10 @@ export const Install = ({ isVisible, setInstallVisible }) => (
           <ListItemText>5. Tap Add in the upper-right corner.</ListItemText>
         </ListItem>
       </List>
-      <Typography variant="h5" component="h2">
+      <Typography variant="h5" component="h2" sx={{
+            textAlign: "left",
+            fontWeight: "bold",
+          }}>
         {" "}
         Steps to install on Android
       </Typography>

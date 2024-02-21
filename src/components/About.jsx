@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import Box from "@mui/material/Box";
 import Dialog from "@mui/material/Dialog";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -7,7 +9,6 @@ import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import CloseIcon from "@mui/icons-material/Close";
-import { grey } from "@mui/material/colors";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
@@ -32,14 +33,15 @@ export const About = ({ isVisible, setAboutVisible }) => {
       }}
     >
       <DialogActions>
-        <Button
-          variant="text"
-          onClick={() => {
-            setAboutVisible(false);
-          }}
-        >
-          <CloseIcon sx={{ color: grey[900] }} fontSize="medium" />
-        </Button>
+    <Box sx={{ display: "flex" }}>
+        <IconButton
+          variant="contained"
+          sx={{ marginLeft: "auto" }}
+          onClick={() =>  setAboutVisible(false)}
+          >
+          <CloseIcon />
+      </IconButton>
+      </Box>
       </DialogActions>
       <DialogContent>
         <Typography
