@@ -2,12 +2,14 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import Link from "@mui/material/Link";
 import CloseIcon from "@mui/icons-material/Close";
 import { grey } from "@mui/material/colors";
+import PropTypes from 'prop-types';
 
 export const Install = ({ isVisible, setInstallVisible }) => (
   <Dialog open={isVisible} onClose={() => setInstallVisible(false)}>
@@ -18,76 +20,84 @@ export const Install = ({ isVisible, setInstallVisible }) => (
     </DialogActions>
 
     <DialogContent>
-      <Typography
-        variant="h3"
-        sx={{
-          marginBottom: "5px",
-        }}
-      >
+      <Typography variant="h5" component="h2">
         {" "}
-        Install on iPhone
+        Steps to install on iPhone
       </Typography>
-      <List sx={{ listStyleType: "disc" }}>
-        <ListItem sx={{ display: "list-item" }}>Open Safari.</ListItem>
-        <ListItem sx={{ display: "list-item", component: "a" }}>
-          Navigate to
-          <Link
-            href="https://practicalplay.co.uk/"
-            underline="hover"
-            variant="body2"
-            target="_blank"
-            rel="noopener"
-          >
-            {" Variable Ratio Generator"}
-          </Link>
-          .
+      <List>
+        <ListItem disablePadding>
+          <ListItemText>1. Open Safari.</ListItemText>
         </ListItem>
-
-        <ListItem sx={{ display: "list-item" }}>
-          Tap on the Share button.
+        <ListItem disablePadding>
+          <ListItemText sx={{ component: "a" }}>
+            2. Navigate to
+            <Link
+              href="https://practicalplay.co.uk/"
+              underline="hover"
+              variant="body2"
+              target="_blank"
+              rel="noopener"
+            >
+              {" Variable Ratio Generator"}
+            </Link>
+            .
+          </ListItemText>
         </ListItem>
-        <ListItem sx={{ display: "list-item" }}>
-          Scroll down and select Add to Home Screen.
+        <ListItem disablePadding>
+          <ListItemText>3. Tap on the Share button.</ListItemText>{" "}
         </ListItem>
-        <ListItem sx={{ display: "list-item" }}>
-          Tap Add in the upper-right corner.
+        <ListItem disablePadding>
+          <ListItemText>
+            4. Scroll down and select Add to Home Screen.
+          </ListItemText>{" "}
+        </ListItem>
+        <ListItem disablePadding>
+          <ListItemText>5. Tap Add in the upper-right corner.</ListItemText>
         </ListItem>
       </List>
-      <Typography
-        variant="h3"
-        sx={{
-          marginBottom: "5px",
-          marginTop: "20px",
-        }}
-      >
+      <Typography variant="h5" component="h2">
         {" "}
-        Install on Android
+        Steps to install on Android
       </Typography>
-      <List sx={{ listStyleType: "disc" }}>
-        <ListItem sx={{ display: "list-item" }}>Open Google Chrome.</ListItem>
-        <ListItem sx={{ display: "list-item", component: "a" }}>
-          Navigate to
-          <Link
-            href="https://practicalplay.co.uk/"
-            underline="hover"
-            variant="body2"
-            target="_blank"
-            rel="noopener"
-          >
-            {" Variable Ratio Generator"}
-          </Link>
-          .
+      <List>
+        <ListItem disablePadding sx={{ display: "list-item" }}>
+          <ListItemText>1. Open Google Chrome.</ListItemText>
         </ListItem>
-        <ListItem sx={{ display: "list-item" }}>
-          Tap on the overflow menu (three dots) in the upper-right corner.
+        <ListItem disablePadding sx={{ display: "list-item", component: "a" }}>
+          <ListItemText>
+            2. Navigate to
+            <Link
+              href="https://practicalplay.co.uk/"
+              underline="hover"
+              variant="body2"
+              target="_blank"
+              rel="noopener"
+            >
+              {" Variable Ratio Generator"}
+            </Link>
+            .
+          </ListItemText>
         </ListItem>
-        <ListItem sx={{ display: "list-item" }}>
-          Select Add to Home Screen.
+        <ListItem disablePadding sx={{ display: "list-item" }}>
+          <ListItemText>
+            3. Tap on the overflow menu (three dots) in the upper-right corner.
+          </ListItemText>
         </ListItem>
-        <ListItem sx={{ display: "list-item" }}>Tap Add.</ListItem>
+        <ListItem disablePadding sx={{ display: "list-item" }}>
+          <ListItemText>4. Select Add to Home Screen.</ListItemText>
+        </ListItem>
+        <ListItem disablePadding sx={{ display: "list-item" }}>
+          <ListItemText>5. Tap Add.</ListItemText>
+        </ListItem>
       </List>
-      Variable Ratio Generator will now appear on your home screen just like any
-      other app.
+      <Typography variant="body2">
+        Variable Ratio Generator will now appear on your home screen just like
+        any other app.
+      </Typography>
     </DialogContent>
   </Dialog>
 );
+Install.propTypes = {
+  isVisible: PropTypes.bool,
+  setInstallVisible: PropTypes.func
+}

@@ -2,6 +2,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import { AverageSelection } from "./AverageSelection";
 import { Box } from "@mui/material";
+import PropTypes from 'prop-types';
 
 export const CloseRewardView = ({ setAverage }) => {
   return (
@@ -16,3 +17,7 @@ export const CloseRewardView = ({ setAverage }) => {
     </Box>
   );
 };
+
+CloseRewardView.propTypes = {
+  setAverage: PropTypes.func
+}

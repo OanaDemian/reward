@@ -3,6 +3,8 @@ import { generateValues } from "../utils/generateValues";
 import { RewardWheel } from "./RewardWheel";
 import { CloseRewardView } from "./CloseRewardView";
 import Paper from '@mui/material/Paper';
+import PropTypes from 'prop-types'; 
+import PropType from 'prop-types';
 
 export const Reward = ({ average, setAverage }) => {
   const [trialsToRewards, setTrialsToRewards] = useState([]);
@@ -31,3 +33,8 @@ export const Reward = ({ average, setAverage }) => {
     </Paper>
   );
 };
+
+Reward.propTypes = {
+  average: PropTypes.oneOfType([PropType.number, PropType.string]),
+  setAverage: PropTypes.func
+}

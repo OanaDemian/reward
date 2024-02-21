@@ -13,7 +13,6 @@ export function App() {
 
   return (
     <>
-      {/* <div> */}
         <div style={{ width: "100%", position: "relative" }}>
           <Box
             sx={{
@@ -36,7 +35,6 @@ export function App() {
         </div>
         <Divider></Divider>
         <RewardGiver />
-      {/* </div> */}
       <Install
         isVisible={installVisible}
         setInstallVisible={setInstallVisible}

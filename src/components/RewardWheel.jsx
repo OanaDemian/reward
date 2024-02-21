@@ -5,6 +5,7 @@ import { Box } from "@mui/system";
 import { useTheme } from "@mui/material/styles";
 import { blue } from "@mui/material/colors";
 import Stack from "@mui/material/Stack";
+import PropTypes from 'prop-types';
 
 export const RewardWheel = ({ val, onComplete }) => {
   const [progress, setProgress] = useState(0);
@@ -14,14 +15,14 @@ export const RewardWheel = ({ val, onComplete }) => {
     onComplete();
   };
   return (
-    <Stack spacing={{ xs: 2, sm: 4, md: 6 }} direction="column" flexWrap="wrap" sx={{padding: "8px"}}>
+    <Stack spacing={{ xs: 2, sm: 4, md: 6 }} direction="column" flexWrap="wrap" sx={{padding: "16px"}}>
       <Box
         sx={{
           position: "relative",
-          height: "80vw",
-          width: "80vw",
-          maxHeight: "calc(60vh - 88px)",
-          maxWidth: "calc(60vh - 88px)",
+          height: "50vw",
+          width: "50vw",
+          maxHeight: "calc(55vh - 88px)",
+          maxWidth: "calc(55vh - 88px)",
         }}
       >
         <Box
@@ -60,27 +61,14 @@ export const RewardWheel = ({ val, onComplete }) => {
           }}
         />
       </Box>
+      <Box sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
       {progress < val ? (
         <>
           <Button
             variant="contained"
-            sx={(theme) => ({
-              p: 1,
-              fontSize: "1.2rem",
-              [theme.breakpoints.down("sm")]: {
-                p: 2,
-                fontSize: "1.3rem",
-              },
-              [theme.breakpoints.between("sm", "md")]: {
-                p: 3,
-                fontSize: "2.2rem",
-              },
-              [theme.breakpoints.up("md")]: {
-                p: 3.5,
-                fontSize: "2.5rem",
-              },
-            })}
             onClick={() => setProgress(progress + 1)}
+            size="large"
+
           >
             Target
           </Button>
@@ -90,28 +78,20 @@ export const RewardWheel = ({ val, onComplete }) => {
           <Button
             variant="contained"
             color="success"
-            sx={(theme) => ({
-              p: 1,
-              fontSize: "1.2rem",
-              [theme.breakpoints.down("sm")]: {
-                p: 2,
-                fontSize: "1.3rem",
-              },
-              [theme.breakpoints.between("sm", "md")]: {
-                p: 3,
-                fontSize: "2.2rem",
-              },
-              [theme.breakpoints.up("md")]: {
-                p: 3.5,
-                fontSize: "2.5rem",
-              },
-            })}
-            onClick={() => nextSetClicked()}
+                onClick={() => nextSetClicked()}
+                size="large"
           >
             Next Set
           </Button>
         </>
-      )}
+        )}
+        </Box>
     </Stack>
+    
   );
 };
+
+RewardWheel.propTypes = {
+  val: PropTypes.number,
+  onComplete: PropTypes.func
+}

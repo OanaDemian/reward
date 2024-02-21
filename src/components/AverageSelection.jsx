@@ -5,6 +5,9 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import { Stack } from "@mui/material";
+import Typography from "@mui/material/Typography";
+import PropTypes from 'prop-types';
+
 
 export const AverageSelection = ({ setAverage }) => {
   const currentAverage = () => localStorage.getItem("selectedAverage");
@@ -25,11 +28,12 @@ export const AverageSelection = ({ setAverage }) => {
   return (
     <>
       <Stack
-        spacing={2}
+        spacing={4}
         direction="column"
         justifyContent="center"
         alignItems="center"
       >
+        <Typography variant="body1">Select an average for your variable ratio schedule.</Typography>
         <FormControl
           sx={{
             m: 10,
@@ -37,12 +41,11 @@ export const AverageSelection = ({ setAverage }) => {
           }}
           size="large"
         >
-          <InputLabel id="demo-simple-select-autowidth-label">
+          <InputLabel id="average-label">
             Average
           </InputLabel>
           <Select
-            labelId="demo-simple-select-autowidth-label"
-            id="demo-simple-select-autowidth"
+            labelId="average-label"
             value={selectedAverage || ""}
             onChange={handleChange}
             label="Average"
@@ -60,24 +63,9 @@ export const AverageSelection = ({ setAverage }) => {
         </FormControl>
         <Button
           variant="contained"
-          sx={(theme) => ({
-            p: 1,
-            fontSize: "1rem",
-            [theme.breakpoints.down("sm")]: {
-              p: 1.3,
-              fontSize: "1.3rem",
-            },
-            [theme.breakpoints.between("sm", "md")]: {
-              p: 1.5,
-              fontSize: "2.2rem",
-            },
-            [theme.breakpoints.up("md")]: {
-              p: 2,
-              fontSize: "2.5rem",
-            },
-          })}
           onClick={() => setAverage(selectedAverage)}
           disabled={!selectedAverage}
+          size="large"
         >
           Start
         </Button>
@@ -85,3 +73,6 @@ export const AverageSelection = ({ setAverage }) => {
     </>
   );
 };
+AverageSelection.propTypes = {
+  setAverage: PropTypes.func
+}

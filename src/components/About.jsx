@@ -3,6 +3,7 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import CloseIcon from "@mui/icons-material/Close";
@@ -13,6 +14,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import basicSchOfReinforcement from "../assets/BasicSchedulesOfReinforcement.png";
+import PropTypes from 'prop-types';
 
 export const About = ({ isVisible, setAboutVisible }) => {
   const [showMore, setShowMore] = useState(false);
@@ -39,10 +41,9 @@ export const About = ({ isVisible, setAboutVisible }) => {
           <CloseIcon sx={{ color: grey[900] }} fontSize="medium" />
         </Button>
       </DialogActions>
-
       <DialogContent>
         <Typography
-          variant="h3"
+          variant="h4" component="h3"
           sx={{
             textAlign: "left",
             fontWeight: "bold"
@@ -50,37 +51,46 @@ export const About = ({ isVisible, setAboutVisible }) => {
         >
           How To Use
         </Typography>
-        <Typography>
-          Reward after the average number of responses has occurred.
-        </Typography>
-        <List sx={{ listStyleType: "disc", pl: 2.25 }}>
-          <ListItem sx={{ display: "list-item" }}>
-            Select your average from the dropdown list and press{" "}
-            <strong>START</strong>.
+
+        <List>
+          <ListItem disablePadding>
+            <ListItemText>
+            1. Select your average from the dropdown list and press{" "}
+              <strong>START</strong>.
+              </ListItemText>
           </ListItem>
-          <ListItem sx={{ display: "list-item" }}>
-            On the reward page, press the <strong>TARGET</strong> button after
+          <ListItem disablePadding>
+            <ListItemText>
+            2. On the reward page, press the <strong>TARGET</strong> button after
             each correct occurrence of the target behaviour. As you click, you
-            are able to see the progress.
+              are able to see the progress.
+              </ListItemText>
           </ListItem>
-          <ListItem sx={{ display: "list-item" }}>
-            When the circle is full and <strong>NEXT SET</strong> appears,
+          <ListItem disablePadding>
+            <ListItemText>
+            3. When the circle is full and <strong>NEXT SET</strong> appears,
             deliver the reward.
+            </ListItemText>
           </ListItem>
-          <ListItem sx={{ display: "list-item" }}>
-            Continue repeating steps 2 and 3.
+          <ListItem disablePadding>
+            <ListItemText>
+              4. Continue repeating steps two and three.
+              </ListItemText>
           </ListItem>
-          <ListItem sx={{ display: "list-item" }}>
-            Pres the X button to go to the previous screen.
+          <ListItem disablePadding>
+            <ListItemText>
+              5. Pres the X button to go to the previous screen.
+              </ListItemText>
           </ListItem>
         </List>
         <Typography
-          variant="h3"
+          variant="h4" component="h3"
           sx={{
-            fontWeight: "bold"
+            fontWeight: "bold",
+            textAlign: "left"
           }}
         >
-          Schedules of Reinforcement
+          Schedules Of Reinforcement
         </Typography>
         <DialogContentText sx={{ whiteSpace: "pre-wrap" }}>
           <Link
@@ -112,10 +122,17 @@ export const About = ({ isVisible, setAboutVisible }) => {
         />
         <CardContent sx={{ padding: "5px" }}>
           <Typography variant="body2">
-            Basic Schedules Of Reinforcement (Cooper, Heron, and Heward, 2007).
+            Basic Schedules Of Reinforcement <Link target="_blank"
+            rel="noopener" href="https://www.pearson.com/en-gb/subject-catalog/p/applied-behavior-analysis-global-edition/P200000003973
+" variant="body2">Cooper, Heron, and Heward, 2020</Link>
           </Typography>
         </CardContent>
       </DialogContent>
     </Dialog>
   );
 };
+
+About.propTypes = {
+  isVisible: PropTypes.bool,
+  setAboutVisible: PropTypes.func
+}

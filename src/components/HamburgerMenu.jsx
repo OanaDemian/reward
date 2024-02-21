@@ -8,6 +8,7 @@ import { HamburgerOption } from "./HamburgerOption";
 import DownloadIcon from "@mui/icons-material/Download";
 import { ThemeColorToggle } from "./ThemeColorToggle";
 import Box from "@mui/material/Box";
+import PropTypes from 'prop-types';
 
 export const HamburgerMenu = ({
   setInstallVisible,
@@ -73,3 +74,8 @@ export const HamburgerMenu = ({
     </Box>
   );
 };
+
+HamburgerMenu.propTypes = {
+  setInstallVisible: PropTypes.func,
+  setAboutVisible: PropTypes.func
+}
