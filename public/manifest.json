@@ -4,7 +4,7 @@
   "lang":"English",
   "short_name": "VRGenerator",
   "display": "standalone",
-  "background_color": "#fff",
+  "background-color": "rgba(243, 246, 249, 0.6)",
   "icons": [
          {
       "src": "/favicon.ico",

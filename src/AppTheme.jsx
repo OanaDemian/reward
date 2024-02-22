@@ -35,9 +35,13 @@ export const AppTheme = () => {
     <ColorModeContext.Provider value={{ mode: mode, toggleColorMode: colorMode.toggleColorMode }}>
       <ThemeProvider theme={theme}>
         <CssBaseline>
-          <App />
+          <App sx={{
+            backgroundColor: theme.palette.mode === "light"
+              ? theme.palette.background.default = "rgba(243, 246, 249, 0.6)"
+              : theme.palette.background.default = "rgb(31, 38, 46)"
+          }} />
         </CssBaseline>
-      </ThemeProvider>
+      </ThemeProvider>  
      </ColorModeContext.Provider>
   );
 };

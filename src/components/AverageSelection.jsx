@@ -6,6 +6,7 @@ import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import { Stack } from "@mui/material";
 import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
 import PropTypes from "prop-types";
 
 export const AverageSelection = ({ setAverage }) => {
@@ -25,7 +26,7 @@ export const AverageSelection = ({ setAverage }) => {
   }, [selectedAverage]);
 
   return (
-    <>
+    <Paper elevation={24} sx={{ padding:"40px"}}>                       
       <Stack
         spacing={4}
         direction="column"
@@ -69,7 +70,7 @@ export const AverageSelection = ({ setAverage }) => {
           Start
         </Button>
       </Stack>
-    </>
+    </Paper>
   );
 };
 AverageSelection.propTypes = {
