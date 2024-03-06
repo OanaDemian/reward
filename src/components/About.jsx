@@ -11,6 +11,7 @@ import Link from "@mui/material/Link";
 import CloseIcon from "@mui/icons-material/Close";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from '@mui/material/DialogTitle';
 import DialogContentText from "@mui/material/DialogContentText";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
@@ -32,29 +33,24 @@ export const About = ({ isVisible, setAboutVisible }) => {
         setAboutVisible(false);
       }}
     >
+      <Box sx={{display:"flex", justifyContent:"space-between"}}>
+            <DialogTitle variant="h5" component="h1" sx={{
+            fontWeight: "bold", 
+      }}> How To Use
+      </DialogTitle>
       <DialogActions>
-    <Box sx={{ display: "flex" }}>
-        <IconButton
-          variant="contained"
-          sx={{ marginLeft: "auto" }}
-          onClick={() =>  setAboutVisible(false)}
+        <Box sx={{ display: "flex" }}>
+          <IconButton
+            variant="contained"
+            sx={{ marginLeft: "auto" }}
+            onClick={() => setAboutVisible(false)}
           >
-          <CloseIcon />
-      </IconButton>
-      </Box>
+            <CloseIcon />
+          </IconButton>
+        </Box>
       </DialogActions>
+</Box>
       <DialogContent>
-        <Typography
-          variant="h4"
-          component="h3"
-          sx={{
-            textAlign: "left",
-            fontWeight: "bold",
-          }}
-        >
-          How To Use
-        </Typography>
-
         <List>
           <ListItem disablePadding>
             <ListItemText>
@@ -86,16 +82,9 @@ export const About = ({ isVisible, setAboutVisible }) => {
             </ListItemText>
           </ListItem>
         </List>
-        <Typography
-          variant="h4"
-          component="h3"
-          sx={{
-            fontWeight: "bold",
-            textAlign: "left",
-          }}
-        >
-          Schedules Of Reinforcement
-        </Typography>
+        <DialogTitle variant="h6" component="h2" sx={{
+            fontWeight: "bold", m: 0, p:0
+          }}>Schedules Of Reinforcement</DialogTitle>
         <DialogContentText sx={{ whiteSpace: "pre-wrap" }}>
           <Link
             target="_blank"

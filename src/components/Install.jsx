@@ -5,6 +5,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Typography from "@mui/material/Typography";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
+import DialogTitle from '@mui/material/DialogTitle';
 import Link from "@mui/material/Link";
 import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
@@ -14,6 +15,10 @@ import Box from "@mui/material/Box";
 
 export const Install = ({ isVisible, setInstallVisible }) => (
   <Dialog open={isVisible} onClose={() => setInstallVisible(false)}>
+      <Box  sx={{display:"flex", justifyContent:"space-between"}}>
+    <DialogTitle  variant="h5" component="h1" sx={{
+      fontWeight: "bold",
+          }}> Install</DialogTitle>
     <DialogActions>
       <Box sx={{ display: "flex" }}>
         <IconButton
@@ -25,9 +30,9 @@ export const Install = ({ isVisible, setInstallVisible }) => (
       </IconButton>
       </Box>
     </DialogActions>
-
+</Box>
     <DialogContent>
-      <Typography variant="h5" component="h2" sx={{
+      <Typography variant="h6" component="h2" sx={{
             textAlign: "left",
             fontWeight: "bold",
           }}>
@@ -65,7 +70,7 @@ export const Install = ({ isVisible, setInstallVisible }) => (
           <ListItemText>5. Tap Add in the upper-right corner.</ListItemText>
         </ListItem>
       </List>
-      <Typography variant="h5" component="h2" sx={{
+      <Typography variant="h6" component="h2" sx={{
             textAlign: "left",
             fontWeight: "bold",
           }}>

@@ -11,7 +11,7 @@ export const Reward = ({ average, setAverage }) => {
   const [currentTrial, setCurrentTrial] = useState(0);
   useEffect(() => {
     setTrialsToRewards(generateValues(5, average, 1, average * 2));
-  }, []);
+  }, [average]);
 
   const trialCompleted = () => {
     setCurrentTrial((currentState) => {
@@ -24,7 +24,7 @@ export const Reward = ({ average, setAverage }) => {
     });
   };
   return (
-    <Paper elevation={4}>
+    <Paper elevation={24}>
       <CloseRewardView setAverage={setAverage} />
       <RewardWheel
         val={trialsToRewards[currentTrial]}

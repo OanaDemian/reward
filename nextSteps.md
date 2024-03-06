@@ -7,4 +7,7 @@
 - app title (done)
 - number of sets (future goal)
 - props validation
+- titles for modals/ pop ups
+- diff padding mobile/desktop
+- navigation bar/header component  
 

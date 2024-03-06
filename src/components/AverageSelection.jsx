@@ -26,7 +26,7 @@ export const AverageSelection = ({ setAverage }) => {
   }, [selectedAverage]);
 
   return (
-    <Paper elevation={24} sx={{ padding:"40px"}}>                       
+    <Paper elevation={24} sx={{ padding:"24px"}}>                       
       <Stack
         spacing={4}
         direction="column"
